@@ -1,2 +1,6 @@
 name: nginx-test
 apiVersion: v3
+dependencies:
+- name: ingress-nginx/ingress-nginx
+  version: 3.19.0
+  repository: https://kubernetes.github.io/ingress-nginx
