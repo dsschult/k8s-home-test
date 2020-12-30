@@ -1,0 +1,5 @@
+ingress-nginx:
+  controller:
+    ingressClass: nginx-test2
+    service:
+      externalTrafficPolicy: Local
