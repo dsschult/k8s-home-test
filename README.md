@@ -1,5 +1,7 @@
 # k8s-home-test
 
+## ArgoCD
+
 Add an app either via the web-ui, or via cmd line.
 
 Helm v3 requires the cmd line for some reason:
