@@ -1,5 +1,6 @@
-name: nginx-test
 apiVersion: v3
+name: nginx-test
+version: 0.1
 dependencies:
 - name: ingress-nginx/ingress-nginx
   version: 3.19.0
