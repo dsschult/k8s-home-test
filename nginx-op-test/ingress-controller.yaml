@@ -1,7 +1,7 @@
 apiVersion: k8s.nginx.org/v1alpha1
 kind: NginxIngressController
 metadata:
-  name: nginx-op-test
+  name: nginx-op-test-ingress-controller
   namespace: default
 spec:
   type: deployment
@@ -11,7 +11,7 @@ spec:
     tag: 1.9.1-ubi
     pullPolicy: Always
   replicas: 1
-  ingressClass: nginx-op-test
+  ingressClass: nginx-op-test-ingress
   useIngressClassOnly: true
   serviceType: LoadBalancer
   enableCRDs: true
