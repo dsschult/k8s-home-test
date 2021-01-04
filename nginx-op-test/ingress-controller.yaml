@@ -8,9 +8,10 @@ spec:
   nginxPlus: false
   image:
     repository: registry.hub.docker.com/nginx/nginx-ingress
-    tag: edge-ubi
+    tag: 1.9.1-ubi
     pullPolicy: Always
   replicas: 1
   ingressClass: nginx-op-test
+  useIngressClassOnly: true
   serviceType: LoadBalancer
-  enableCRDs: false
+  enableCRDs: true
