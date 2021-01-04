@@ -1,0 +1,12 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: nginx-op-test-ingress
+  annotations:
+    kubernetes.io/ingress.class: "nginx-op-test"
+spec:
+  defaultBackend:
+    service:
+      name: nginx-op-test
+      port:
+        number: 80
