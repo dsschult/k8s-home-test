@@ -6,6 +6,7 @@ metadata:
     kubernetes.io/ingress.class: "nginx-op-test-ingress"
 spec:
   rules:
+  - host: nginx-op-test.localdomain
   - http:
       paths:
       - path: /
