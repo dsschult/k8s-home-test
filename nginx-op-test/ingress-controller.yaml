@@ -2,7 +2,7 @@ apiVersion: k8s.nginx.org/v1alpha1
 kind: NginxIngressController
 metadata:
   name: nginx-op-test
-  namespace: nginx-op-test-ns
+  namespace: default
 spec:
   type: deployment
   nginxPlus: false
