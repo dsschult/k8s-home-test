@@ -1,0 +1,5 @@
+nginx-test-helmv2-ingress:
+  controller:
+    ingressClass: nginx-test-helmv2
+    service:
+      externalTrafficPolicy: Local
