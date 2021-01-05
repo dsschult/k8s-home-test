@@ -10,7 +10,7 @@ spec:
     repository: registry.hub.docker.com/nginx/nginx-ingress
     tag: 1.9.1-ubi
     pullPolicy: Always
-  ingressClass: nginx-op-test-ingress
+  ingressClass: nginx-op-test-ingress-controller
   useIngressClassOnly: true
   serviceType: LoadBalancer
-  enableCRDs: false
+  enableCRDs: true
