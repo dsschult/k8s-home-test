@@ -1,4 +1,4 @@
-nginx-test-helmv2-ingress:
+ingress-nginx:
   controller:
     ingressClass: nginx-test-helmv2
     service:

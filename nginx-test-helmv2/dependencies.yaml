@@ -1,4 +1,4 @@
 dependencies:
-- name: nginx-test-helmv2-ingress
+- name: ingress-nginx
   version: 3.19.0
   repository: https://kubernetes.github.io/ingress-nginx
