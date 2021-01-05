@@ -18,6 +18,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: nginx2
+            name: nginx-op-test
             port:
               number: 80
