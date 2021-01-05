@@ -13,4 +13,4 @@ spec:
   ingressClass: nginx-op-test-ingress
   useIngressClassOnly: true
   serviceType: LoadBalancer
-  enableCRDs: true
+  enableCRDs: false
