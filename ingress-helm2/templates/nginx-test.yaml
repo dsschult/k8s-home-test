@@ -1,20 +1,20 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ .Values.spec.name }}-service
+  name: "{{ .Values.spec.name }}-service"
 spec:
   ports:
   - port: 80
     targetPort: 80
   selector:
-    app: {{ .Values.spec.name }}-app
+    app: "{{ .Values.spec.name }}-app"
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: {{ .Values.spec.name }}-ingress
+  name: "{{ .Values.spec.name }}-ingress"
   annotations:
-    kubernetes.io/ingress.class: {{ .Values.ingress-nginx.controller.ingressClass }}
+    kubernetes.io/ingress.class: "{{ .Values.ingress-nginx.controller.ingressClass }}"
 spec:
   rules:
   - http:
@@ -23,23 +23,23 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: {{ .Values.spec.name }}-service
+            name: "{{ .Values.spec.name }}-service"
             port:
               number: 80
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Values.spec.name }}-deployment
+  name: "{{ .Values.spec.name }}-deployment"
 spec:
   selector:
     matchLabels:
-      app: {{ .Values.spec.name }}-app
+      app: "{{ .Values.spec.name }}-app"
   replicas: 1
   template:
     metadata:
       labels:
-        app: {{ .Values.spec.name }}-app
+        app: "{{ .Values.spec.name }}-app"
     spec:
       containers:
       - name: nginx
