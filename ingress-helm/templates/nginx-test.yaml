@@ -1,0 +1,48 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ingress-helm-test-service
+spec:
+  ports:
+  - port: 80
+    targetPort: 80
+  selector:
+    app: ingress-helm-test-app
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-helm-test-ingress
+  annotations:
+    kubernetes.io/ingress.class: "ingress-helm-test"
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: ingress-helm-test-service
+            port:
+              number: 80
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ingress-helm-test-deployment
+spec:
+  selector:
+    matchLabels:
+      app: ingress-helm-test-app
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ingress-helm-test-app
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.19.6
+        ports:
+        - containerPort: 80
