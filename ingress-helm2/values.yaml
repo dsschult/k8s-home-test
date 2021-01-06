@@ -1,0 +1,7 @@
+ingress-nginx:
+  controller:
+    ingressClass: ingress-helm2-test
+    service:
+      externalTrafficPolicy: Local
+spec:
+  name: ingress-helm2
